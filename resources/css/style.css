@@ -12,7 +12,6 @@ html {
 }
 
 .header {
-  border: 1px solid white;
   padding: 0;
   height: 2.75rem;
 }
@@ -24,13 +23,20 @@ h1 {
 input, i {
   border-radius: 16px;
   height: 100%;
+  outline: none;
 }
+
 
 #search-button {
   text-align: center;
-  padding-top: 0.3rem;
-  margin-left: 0.5rem;
+  padding-top: 0.35rem;
+  margin-left: 0.6rem;
   background-color: rgb(255, 0, 171);
+}
+
+#search-button:hover {
+  background-color: rgb(255, 102, 204);
+  transition: background-color 600ms ease-in;
 }
 
 h1 {
