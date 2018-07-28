@@ -32,6 +32,7 @@ input, i {
   padding-top: 0.35rem;
   margin-left: 0.6rem;
   background-color: rgb(255, 0, 171);
+  cursor: pointer;
 }
 
 #search-button:hover {
