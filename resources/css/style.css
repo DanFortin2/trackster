@@ -2,22 +2,10 @@
   Custom styles for Trackster App
 */
 
+/*universal styles*/
+
 html {
   font-size: 16px;
-}
-
-.container-fluid {
-  background-color: rgb(35, 2, 63);
-  padding: 2.5rem 0;
-}
-
-.header {
-  padding: 0;
-  height: 2.75rem;
-}
-
-h1 {
-  margin: auto;
 }
 
 input, i {
@@ -26,6 +14,31 @@ input, i {
   outline: none;
 }
 
+h1 {
+  color: rgb(255, 0, 171);
+  font-family: "Righteous", serif;
+  font-size: 2.5rem;
+  margin: auto;
+}
+
+span {
+  color: rgb(255, 255, 255);
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+}
+
+
+/*header*/
+
+.container-fluid {
+  background-color: rgb(35, 2, 63);
+}
+
+.header {
+  padding: 0;
+  height: 2.75rem;
+  margin: 2.5rem 0;
+}
 
 #search-button {
   text-align: center;
@@ -40,8 +53,10 @@ input, i {
   transition: background-color 600ms ease-in;
 }
 
-h1 {
-  color: rgb(255, 0, 171);
-  font-family: "Righteous", serif;
-  font-size: 2.5rem;
+
+/*Song list titles*/
+
+.list-header {
+  background-color: rgb(104, 0, 255);
+  padding: 0.5rem;
 }
