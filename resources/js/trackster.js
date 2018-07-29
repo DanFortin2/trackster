@@ -1,13 +1,12 @@
+var Trackster = {};
+const API_KEY = 'c2e05b0963a93c365395afd60103ad60';
+
 $(document).ready(function() {
   /*When search button is clicked*/
   $('#search-button').click(function() {
     var searchText = $('#search-input').val();
     Trackster.searchTracksByTitle(searchText);
   });
-
-  const API_KEY = 'c2e05b0963a93c365395afd60103ad60';
-  var Trackster = {};
-
 
 
 /*       $.ajax({
@@ -22,16 +21,20 @@ $(document).ready(function() {
   Append each "row" to the container in the body to display all tracks.
 */
   Trackster.renderTracks = function(tracks) {
-    var tracks = [];
-    for (var trackItem = 1; trackItem <= Trackster.searchTracksByTitle.length; trackItem++) {
-      trackItem.push(tracks);
-      var htmlTrackRow = '<div class="row" id="songs">' +
-       '<a href="https://youtu.be/eI_O5_tJ1hA" target="_blank"><i class="col-xs-1 col-xs-offset-1 fa fa-play-circle-o fa-2x" aria-hidden="true" id="play-button"></i></a>' +
-       '<span class="col-xs-4">track title</span>' +
-       '<span class="col-xs-2">artist name</span>' +
-       '<span class="col-xs-2" id="album-pic"><img src="./resources/images/test.png" alt="Album cover picture"></span>' +
-       '<span class="col-xs-2">listeners</span>' +
+    var $tracklist = $('#track-list');
+    $tracklist.empty();
+    for (var trackItem = 0; trackItem < tracks.length; trackItem++) {
+      var track = tracks[trackItem];
+      var mediumAlbumArt = track.image[1]["#text"];
+      var htmlTrackRow =
+       '<div class="row" id="songs">' +
+       '<a href="' + track.url + '" target="_blank"><i class="col-xs-1 col-xs-offset-1 fa fa-play-circle-o fa-2x" aria-hidden="true" id="play-button"></i></a>' +
+       '<span class="col-xs-4">' + track.name + '</span>' +
+       '<span class="col-xs-2">' + track.artist + '</span>' +
+       '<span class="col-xs-2" id="album-pic"><img src="' + mediumAlbumArt + '" alt="Album cover picture"></span>' +
+       '<span class="col-xs-2">' + track.listeners + '</span>' +
         '</div>';
+      $tracklist.append(htmlTrackRow);
     }
   };
 
@@ -44,8 +47,8 @@ $(document).ready(function() {
     $.ajax({
       url: 'http://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + '&api_key=' + API_KEY + '&format=json',
       datatype: 'jsonp',
-      success: function(data) {
-        console.log(data);
+      success: function(response) {
+        Trackster.renderTracks(response.results.trackmatches.track);
       }
     });
   };
