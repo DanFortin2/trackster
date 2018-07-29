@@ -45,7 +45,7 @@ $(document).ready(function() {
 */
   Trackster.searchTracksByTitle = function(title) {
     $.ajax({
-      url: 'http://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + '&api_key=' + API_KEY + '&format=json',
+      url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + '&api_key=' + API_KEY + '&format=json',
       datatype: 'jsonp',
       success: function(response) {
         Trackster.renderTracks(response.results.trackmatches.track);
