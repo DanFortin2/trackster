@@ -22,8 +22,19 @@ $(document).ready(function() {
   Append each "row" to the container in the body to display all tracks.
 */
   Trackster.renderTracks = function(tracks) {
-
+    var tracks = [];
+    for (var trackItem = 1; trackItem <= Trackster.searchTracksByTitle.length; trackItem++) {
+      trackItem.push(tracks);
+      var htmlTrackRow = '<div class="row" id="songs">' +
+       '<a href="https://youtu.be/eI_O5_tJ1hA" target="_blank"><i class="col-xs-1 col-xs-offset-1 fa fa-play-circle-o fa-2x" aria-hidden="true" id="play-button"></i></a>' +
+       '<span class="col-xs-4">track title</span>' +
+       '<span class="col-xs-2">artist name</span>' +
+       '<span class="col-xs-2" id="album-pic"><img src="./resources/images/test.png" alt="Album cover picture"></span>' +
+       '<span class="col-xs-2">listeners</span>' +
+        '</div>';
+    }
   };
+
 
 /*
   Given a search term as a string, query the LastFM API.
