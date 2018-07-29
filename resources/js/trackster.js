@@ -7,6 +7,13 @@ $(document).ready(function() {
     var searchText = $('#search-input').val();
     Trackster.searchTracksByTitle(searchText);
   });
+  $('#search-input').keydown(function(event) {
+  var key = event.which;
+  var searchText = $('#search-input').val();
+  if(key === 13){
+    Trackster.searchTracksByTitle(searchText);
+  }
+ });
 
 /*
   Given an array of track data, create the HTML for a Bootstrap row for each.
