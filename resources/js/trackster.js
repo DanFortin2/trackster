@@ -8,7 +8,6 @@ $(document).ready(function() {
     Trackster.searchTracksByTitle(searchText);
   });
 
-
 /*
   Given an array of track data, create the HTML for a Bootstrap row for each.
   Append each "row" to the container in the body to display all tracks.
@@ -19,6 +18,7 @@ $(document).ready(function() {
     for (var trackItem = 0; trackItem < tracks.length; trackItem++) {
       var track = tracks[trackItem];
       var mediumAlbumArt = track.image[1]["#text"];
+      track.listeners = numeral(track.listeners).format('0,0');
       var htmlTrackRow =
        '<div class="row" id="songs">' +
        '<a href="' + track.url + '" target="_blank"><i class="col-xs-1 col-xs-offset-1 fa fa-play-circle-o fa-2x" aria-hidden="true" id="play-button"></i></a>' +
@@ -30,6 +30,7 @@ $(document).ready(function() {
       $tracklist.append(htmlTrackRow);
     }
   };
+
 
 
 /*
