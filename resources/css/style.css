@@ -22,7 +22,6 @@ h1 {
 }
 
 span {
-  color: rgb(255, 255, 255);
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
 }
@@ -30,7 +29,7 @@ span {
 
 /*header*/
 
-.container-fluid {
+#top-bar {
   background-color: rgb(35, 2, 63);
 }
 
@@ -59,4 +58,33 @@ span {
 .list-header {
   background-color: rgb(104, 0, 255);
   padding: 0.5rem;
+}
+
+.title-item {
+  color: rgb(255, 255, 255);
+}
+  /*songs*/
+
+#songs {
+  border: 1px solid rgb(204, 204, 204);
+  padding: 1.5rem 0;
+  height: 5rem;
+}
+
+#songs:hover {
+  background-color: rgb(239, 237, 242);
+}
+
+#play-button {
+  color: rgb(255, 0, 171);
+  cursor: pointer;
+}
+
+#songs span {
+  padding-top: 0.18rem;
+}
+
+#album-pic img {
+  height: 4rem;
+  margin-top: -1.3rem;
 }
