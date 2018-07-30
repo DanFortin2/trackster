@@ -7,6 +7,7 @@ $(document).ready(function() {
     var searchText = $('#search-input').val();
     Trackster.searchTracksByTitle(searchText);
   });
+
   $('#search-input').keydown(function(event) {
   var key = event.which;
   var searchText = $('#search-input').val();
@@ -14,6 +15,8 @@ $(document).ready(function() {
     Trackster.searchTracksByTitle(searchText);
   }
  });
+
+
 
 /*
   Given an array of track data, create the HTML for a Bootstrap row for each.
@@ -35,6 +38,7 @@ $(document).ready(function() {
        '<span class="col-xs-2">' + track.listeners + '</span>' +
         '</div>';
       $tracklist.append(htmlTrackRow);
+      $('h1').removeClass('logo');
     }
   };
 
@@ -45,11 +49,13 @@ $(document).ready(function() {
   Render the tracks given in the API query response.
 */
   Trackster.searchTracksByTitle = function(title) {
+    $('h1').addClass('logo');
     $.ajax({
       url: 'https://ws.audioscrobbler.com/2.0/?method=track.search&track=' + title + '&api_key=' + API_KEY + '&format=json',
       datatype: 'jsonp',
       success: function(response) {
         Trackster.renderTracks(response.results.trackmatches.track);
+        console.log(response);
       }
     });
   };

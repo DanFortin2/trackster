@@ -26,6 +26,18 @@ span {
   font-size: 1rem;
 }
 
+.logo {
+  animation-name: color_change;
+  animation-duration: 150ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes color_change {
+	from { color: rgb(255, 0, 171); }
+	to { color: rgb(255, 255, 255); }
+}
+
 
 /*header*/
 
