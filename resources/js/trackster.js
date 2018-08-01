@@ -16,7 +16,7 @@ $(document).ready(function() {
   }
  });
 
-
+//   track.name.data(sort((function(a,b){return a.localeCompare(b)})));
 
 /*
   Given an array of track data, create the HTML for a Bootstrap row for each.
@@ -32,7 +32,7 @@ $(document).ready(function() {
       var htmlTrackRow =
        '<div class="row" id="songs">' +
        '<a href="' + track.url + '" target="_blank"><i class="col-xs-1 col-xs-offset-1 fa fa-play-circle-o fa-2x" aria-hidden="true" id="play-button"></i></a>' +
-       '<span class="col-xs-4">' + track.name + '</span>' +
+       '<span class="col-xs-4 sort">' + track.name + '</span>' +
        '<span class="col-xs-2">' + track.artist + '</span>' +
        '<span class="col-xs-2" id="album-pic"><img src="' + mediumAlbumArt + '" alt="Album cover picture"></span>' +
        '<span class="col-xs-2">' + track.listeners + '</span>' +
